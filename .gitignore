@@ -1,0 +1,10 @@
+# Remove Compiled Files
+*.o
+*.out
+*.exe
+*.class
+
+out/
+build/
+target/
+debug/
