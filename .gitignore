@@ -3,6 +3,7 @@
 *.out
 *.exe
 *.class
+.DS_Store
 
 out/
 build/
