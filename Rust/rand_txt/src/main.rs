@@ -7,7 +7,7 @@ fn main() -> io::Result<()> {
     let mut rng = rand::thread_rng();
 
     // Generate Random Number
-    let numbers: Vec<u32> = (0..4096).map(|_| rng.gen_range(1..=1000000)).collect();
+    let numbers: Vec<u32> = (0..409600).map(|_| rng.gen_range(1..=10000000)).collect();
 
     // Open File
     let mut file = File::create("output.txt")?;
