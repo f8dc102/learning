@@ -28,6 +28,10 @@ void quickSort(std::vector<int> &arr, int low, int high) {
 }
 
 int main() {
+  // 시간 측정
+  clock_t start = clock();
+
+  // 파일에서 데이터 읽기
   std::ifstream inputFile("input.txt");
   std::vector<int> data;
 
@@ -48,12 +52,19 @@ int main() {
   // 퀵 정렬 실행
   quickSort(data, 0, data.size() - 1);
 
+  // 시간 측정
+  clock_t end = clock();
+
   // 정렬된 결과 출력
   std::cout << "Sorted data: ";
   for (const int &num : data) {
     std::cout << num << " ";
   }
   std::cout << std::endl;
+
+  // 시간 측정 결과 출력
+  printf("Execution Time: %fms\n",
+         (double)(end - start) / CLOCKS_PER_SEC * 1000);
 
   return 0;
 }

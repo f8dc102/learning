@@ -27,6 +27,9 @@ fn quick_sort(arr: &mut [i32], low: isize, high: isize) {
 }
 
 fn main() -> io::Result<()> {
+    // 실행 시간
+    let start = std::time::Instant::now();
+
     let path = "input.txt";
     let mut data: Vec<i32> = Vec::new();
 
@@ -51,8 +54,14 @@ fn main() -> io::Result<()> {
         quick_sort(&mut data, 0, (len - 1) as isize);
     }
 
+    // 실행 시간
+    let end = std::time::Instant::now();
+
     // 정렬된 결과 출력
     println!("Sorted data: {:?}", data);
+
+    // 실행 시간 출력
+    println!("Execution Time: {}ms", (end - start).as_millis());
 
     Ok(())
 }

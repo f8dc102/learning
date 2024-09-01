@@ -36,6 +36,9 @@ public class QuickSort {
   }
 
   public static void main(String[] args) {
+    // 시간 측정
+    long startTime = System.currentTimeMillis();
+
     List<Integer> dataList = new ArrayList<>();
 
     // 파일 읽기
@@ -58,11 +61,17 @@ public class QuickSort {
     // 퀵 정렬 실행
     quickSort(data, 0, data.length - 1);
 
+    // 시간 측정
+    long endTime = System.currentTimeMillis();
+
     // 정렬된 결과 출력
     System.out.print("Sorted data: ");
     for (int num : data) {
       System.out.print(num + " ");
     }
     System.out.println();
+
+    // 실행 시간 출력
+    System.out.println("Execution Time: " + (endTime - startTime) + "ms");
   }
 }

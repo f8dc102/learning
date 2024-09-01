@@ -1,3 +1,5 @@
+import time
+
 # 퀵 정렬 알고리즘 정의
 def quick_sort(arr):
     if len(arr) <= 1:
@@ -8,6 +10,8 @@ def quick_sort(arr):
     right = [x for x in arr if x > pivot]
     return quick_sort(left) + middle + quick_sort(right)
 
+# 실행 시간
+start_time = time.time()
 
 # input.txt 파일에서 데이터 읽기
 with open("input.txt", "r") as file:
@@ -19,5 +23,11 @@ arr = list(map(int, data.split()))
 # 퀵 정렬 적용
 sorted_arr = quick_sort(arr)
 
+# 실행 시간
+end_time = time.time()
+
 # 결과 출력
 print("정렬된 결과:", sorted_arr)
+
+# 실행 시간 출력
+print("Execution Time: {}ms".format((end_time - start_time) * 1000))
