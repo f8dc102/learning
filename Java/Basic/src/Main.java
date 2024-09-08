@@ -1,15 +1,57 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Hello and welcome!");
+  public static void main(String[] args) {
+    aDog dog = new aDog();
+    System.out.println("Type: " + dog.type);
+    System.out.println("Name: " + dog.name);
+    System.out.println("Age: " + dog.age);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
-    }
+    aCat cat = new aCat();
+    System.out.println("Type: " + cat.type);
+    System.out.println("Name: " + cat.name);
+    System.out.println("Age: " + cat.age);
+  }
+}
+
+class anAnimal {
+  // Properties
+  String type;
+  String name;
+  int age;
+
+  // Constructor
+  public anAnimal() {
+    this.type = "Animal";
+    this.name = "Generic Animal";
+    this.age = 0;
+  }
+
+  public void eat() {
+    System.out.println("I am eating");
+  }
+}
+
+class aDog extends anAnimal {
+  // Constructor
+  public aDog() {
+    this.type = "Dog";
+    this.name = "Generic Dog";
+    this.age = 0;
+  }
+
+  public void bark() {
+    System.out.println("I am barking");
+  }
+}
+
+class aCat extends anAnimal {
+  // Constructor
+  public aCat() {
+    this.type = "Cat";
+    this.name = "Generic Cat";
+    this.age = 0;
+  }
+
+  public void meow() {
+    System.out.println("I am meowing");
+  }
 }
