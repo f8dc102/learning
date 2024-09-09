@@ -1,14 +1,8 @@
 public class Main {
   public static void main(String[] args) {
-    aDog dog = new aDog();
-    System.out.println("Type: " + dog.type);
-    System.out.println("Name: " + dog.name);
-    System.out.println("Age: " + dog.age);
+    aCat testCat = new aCat();
 
-    aCat cat = new aCat();
-    System.out.println("Type: " + cat.type);
-    System.out.println("Name: " + cat.name);
-    System.out.println("Age: " + cat.age);
+    testCat.eat();
   }
 }
 
@@ -25,9 +19,11 @@ class anAnimal {
     this.age = 0;
   }
 
+  // Methods
   public void eat() {
     System.out.println("I am eating");
   }
+
 }
 
 class aDog extends anAnimal {
@@ -53,5 +49,9 @@ class aCat extends anAnimal {
 
   public void meow() {
     System.out.println("I am meowing");
+  }
+
+  public void eat() {
+    System.out.println("I am eating like a cat");
   }
 }

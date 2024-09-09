@@ -3,10 +3,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QuickSort {
-
-  // 퀵 정렬의 피벗을 기준으로 분할하는 함수
+  /**
+   * Partition Function
+   *
+   * @param arr  The array to be sorted
+   * @param low  The starting index
+   * @param high The ending index
+   *
+   * @return The index of the pivot element
+   */
   private static int partition(int[] arr, int low, int high) {
-    int pivot = arr[high]; // 피벗을 배열의 마지막 요소로 설정
+    int pivot = arr[high];
     int i = low - 1;
 
     for (int j = low; j < high; j++) {
@@ -19,13 +26,20 @@ public class QuickSort {
     }
 
     int temp = arr[i + 1];
+
     arr[i + 1] = arr[high];
     arr[high] = temp;
 
     return i + 1;
   }
 
-  // 퀵 정렬 함수
+  /**
+   * Quick Sort Function
+   * 
+   * @param arr  The array to be sorted
+   * @param low  The starting index
+   * @param high The ending index
+   */
   private static void quickSort(int[] arr, int low, int high) {
     if (low < high) {
       int pi = partition(arr, low, high);
@@ -35,43 +49,49 @@ public class QuickSort {
     }
   }
 
+  /**
+   * Main Function
+   */
   public static void main(String[] args) {
-    // 시간 측정
+    // Measure Execution Time
     long startTime = System.currentTimeMillis();
 
     List<Integer> dataList = new ArrayList<>();
 
-    // 파일 읽기
+    // Read File
     try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
       String line;
+
       while ((line = br.readLine()) != null) {
         String[] numbers = line.split("\\s+");
+
         for (String num : numbers) {
           dataList.add(Integer.parseInt(num));
         }
       }
     } catch (IOException e) {
       System.err.println("Error reading file: " + e.getMessage());
+
       return;
     }
 
     // List<Integer>를 int[]로 변환
     int[] data = dataList.stream().mapToInt(i -> i).toArray();
 
-    // 퀵 정렬 실행
+    // Execute Quick Sort
     quickSort(data, 0, data.length - 1);
 
-    // 시간 측정
+    // Measure Execution Time
     long endTime = System.currentTimeMillis();
 
-    // 정렬된 결과 출력
+    // Print Sorted Data
     System.out.print("Sorted data: ");
     for (int num : data) {
       System.out.print(num + " ");
     }
     System.out.println();
 
-    // 실행 시간 출력
+    // Print Execution Time
     System.out.println("Execution Time: " + (endTime - startTime) + "ms");
   }
 }
