@@ -40,6 +40,9 @@ public class Sep9 {
     double circleArea = getCircleArea(5);
     System.out.println("Circle Area = " + circleArea);
 
+    String userInput = getUserInput();
+    System.out.println("User Input: " + userInput);
+
     return true;
   }
 
