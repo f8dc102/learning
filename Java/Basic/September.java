@@ -1,6 +1,9 @@
 import java.util.Scanner;
 
-public class Sep9 {
+/**
+ * September Class
+ */
+public class September {
   /**
    * Main Method
    * 
