@@ -1,26 +1,3 @@
-
-/******************************************************************************
- * File:        Practice.java
- * Description: Homework of Java Programming Class.
- *
- * Author:      F8DC102(정재윤)
- * Created:     2024-09-11
- * Version:     1.0 
- *
- * Company:     YONSEI UNIVERSITY
- * License:     MIT License
- *
- * Repo URL:    https://github.com/f8dc102/learning
- *
- * ----------------------------------------------------------------------------
- * Change Log: N/A
- * ----------------------------------------------------------------------------
- * Date           Author          Version     Description
- * ----------------------------------------------------------------------------
- * 2024-09-11     F8DC102           1.0     Initial version.
- *
- *****************************************************************************/
-
 import java.util.Scanner;
 
 /**
