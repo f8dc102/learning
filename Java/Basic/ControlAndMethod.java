@@ -144,6 +144,9 @@ class Control {
     // Print the largest and the smallest numbers
     System.out.println("The largest integer is " + largest
         + "," + " and the smallest integer is " + smallest + "!");
+
+    // Close the scanner
+    scanner.close();
   }
 
   /**
