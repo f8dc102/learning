@@ -1,5 +1,13 @@
 import java.util.Scanner;
 
+/**
+ * Basics Class
+ * 
+ * This class contains basic Java programming concepts
+ * 
+ * @version 1.0
+ * @since 2024-09-14
+ */
 public class Basics {
   /**
    * Main Method
@@ -99,6 +107,14 @@ public class Basics {
   }
 }
 
+/**
+ * Practice Class
+ * 
+ * This class contains practice problems for Java programming
+ * 
+ * @version 1.0
+ * @since 2024-09-14
+ */
 class Practice {
   /**
    * Constructor
@@ -124,6 +140,11 @@ class Practice {
     // Practice 2-4
     System.out.println("Practice 2-4");
     calculateTax();
+    System.out.println();
+
+    // Practice 2-5
+    System.out.println("Practice 2-5");
+    calculateAverage(userInput);
     System.out.println();
   }
 
@@ -201,5 +222,26 @@ class Practice {
     System.out.println("Casted Price and Tax to Integer");
     System.out.println("Price: " + (int) price);
     System.out.println("Tax: " + (int) tax);
+  }
+
+  /**
+   * Practice 2-5
+   * Calculate Average of 3 Numbers
+   */
+  public void calculateAverage(Scanner userInput) {
+    // Print Prompt
+    System.out.println("Enter three Numbers: ");
+
+    // Read Input
+    // @WARNING: Scanner is already initialized in Main Method
+    int numA = userInput.nextInt();
+    int numB = userInput.nextInt();
+    int numC = userInput.nextInt();
+
+    // Calculate Average
+    double average = (numA + numB + numC) / 3.0;
+
+    // Print Average
+    System.out.printf("The average of %d, %d, and %d is %f", numA, numB, numC, average);
   }
 }

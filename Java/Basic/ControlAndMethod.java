@@ -11,10 +11,13 @@ public class ControlAndMethod {
    * @param args The command-line arguments.
    */
   public static void main(String[] args) {
+    // Initialize the Scanner
+    Scanner userInput = new Scanner(System.in);
+
     // Initalize the Control class
     Control control = new Control();
 
-    control.printGrade();
+    control.printGrade(userInput);
     System.out.println();
 
     control.compareThreeNumbers();
@@ -52,16 +55,15 @@ class Control {
    * Get Score and Print Grade
    * Using If-Else Statement
    */
-  public void printGrade() {
+  public void printGrade(Scanner userInput) {
     // Initialize the score
     char grade = 'F';
 
     // Get the score from the user
-    Scanner scanner = new Scanner(System.in);
     System.out.print("점수를 입력하세요: ");
 
     // Read the score from the user
-    byte score = scanner.nextByte();
+    byte score = userInput.nextByte();
 
     // Close the Scanner
     // scanner.close();
