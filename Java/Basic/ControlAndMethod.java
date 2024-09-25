@@ -46,6 +46,9 @@ public class ControlAndMethod {
 
     control.primeNumbersTable();
     System.out.println();
+
+    // Close the scanner
+    userInput.close();
   }
 }
 
