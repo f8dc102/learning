@@ -11,13 +11,10 @@ public class ControlAndMethod {
    * @param args The command-line arguments.
    */
   public static void main(String[] args) {
-    // Initialize the Scanner
-    Scanner userInput = new Scanner(System.in);
-
     // Initalize the Control class
     Control control = new Control();
 
-    control.printGrade(userInput);
+    control.printGrade();
     System.out.println();
 
     control.compareThreeNumbers();
@@ -55,12 +52,15 @@ class Control {
    * Get Score and Print Grade
    * Using If-Else Statement
    */
-  public void printGrade(Scanner userInput) {
+  public void printGrade() {
     // Initialize the score
     char grade = 'F';
 
     // Get the score from the user
     System.out.print("점수를 입력하세요: ");
+
+    // Scanner object to read input from the keyboard
+    Scanner userInput = new Scanner(System.in);
 
     // Read the score from the user
     byte score = userInput.nextByte();
@@ -144,9 +144,6 @@ class Control {
     // Print the largest and the smallest numbers
     System.out.println("The largest integer is " + largest
         + "," + " and the smallest integer is " + smallest + "!");
-
-    // Close the scanner
-    scanner.close();
   }
 
   /**
