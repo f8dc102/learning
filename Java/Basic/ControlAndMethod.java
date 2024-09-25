@@ -11,34 +11,37 @@ public class ControlAndMethod {
    * @param args The command-line arguments.
    */
   public static void main(String[] args) {
+    // Create Scanner object to read input from the keyboard
+    Scanner userInput = new Scanner(System.in);
+
     // Initalize the Control class
     Control control = new Control();
 
-    control.printGrade();
+    control.printGrade(userInput);
     System.out.println();
 
-    control.compareThreeNumbers();
+    control.compareThreeNumbers(userInput);
     System.out.println();
 
-    control.simpleCalculator();
+    control.simpleCalculator(userInput);
     System.out.println();
 
-    control.simpleCalculatorII();
+    control.simpleCalculatorII(userInput);
     System.out.println();
 
-    control.calculateZodiac();
+    control.calculateZodiac(userInput);
     System.out.println();
 
     control.multiplicationTable();
     System.out.println();
 
-    control.additionQuiz();
+    control.additionQuiz(userInput);
     System.out.println();
 
-    control.upAndDownGame();
+    control.upAndDownGame(userInput);
     System.out.println();
 
-    control.subtractionQuiz();
+    control.subtractionQuiz(userInput);
     System.out.println();
 
     control.primeNumbersTable();
@@ -52,15 +55,12 @@ class Control {
    * Get Score and Print Grade
    * Using If-Else Statement
    */
-  public void printGrade() {
+  public void printGrade(Scanner userInput) {
     // Initialize the score
     char grade = 'F';
 
     // Get the score from the user
     System.out.print("점수를 입력하세요: ");
-
-    // Scanner object to read input from the keyboard
-    Scanner userInput = new Scanner(System.in);
 
     // Read the score from the user
     byte score = userInput.nextByte();
@@ -90,18 +90,17 @@ class Control {
    * Get Three Numbers and Print the Largest Number and the Smallest Number
    * Using Nested If-Else Statement
    */
-  public void compareThreeNumbers() {
+  public void compareThreeNumbers(Scanner userInput) {
     // Initialize the numbers
     int numA = 0, numB = 0, numC = 0;
 
     // Get the numbers from the user
-    Scanner scanner = new Scanner(System.in);
     System.out.print("Enter any three integers: ");
 
     // Read the numbers from the user
-    numA = scanner.nextInt();
-    numB = scanner.nextInt();
-    numC = scanner.nextInt();
+    numA = userInput.nextInt();
+    numB = userInput.nextInt();
+    numC = userInput.nextInt();
 
     // Close the scanner
     // scanner.close();
@@ -157,7 +156,7 @@ class Control {
    * @COMMENT: The Instruction is inefficient. It is better to use a switch
    *           statement.
    */
-  public void simpleCalculator() {
+  public void simpleCalculator(Scanner userInput) {
     // Initialize the numbers and the operator
     int numA = 0, numB = 0, result = 0;
     byte operator = 0;
@@ -174,18 +173,13 @@ class Control {
     System.out.println("5. Remainder");
 
     // Get the operator from the user
-    // @WARNING: Close the scanner after the calculation
-    Scanner scanner = new Scanner(System.in);
     System.out.print("Choice number<1-5>: ");
     // Read the operator from the user
-    operator = scanner.nextByte();
+    operator = userInput.nextByte();
 
     // If the operator is not valid, print an error message and exit the program
     if (operator < 1 || operator > 5) {
       System.out.println("Wrong Input");
-
-      // Close the scanner
-      // scanner.close();
 
       return;
     }
@@ -196,15 +190,12 @@ class Control {
     // Get First Number
     System.out.print("Enter the first number: ");
     // Read the first number from the user
-    numA = scanner.nextInt();
+    numA = userInput.nextInt();
 
     // Get Second Number
     System.out.print("Enter the second number: ");
     // Read the second number from the user
-    numB = scanner.nextInt();
-
-    // Close the scanner
-    // scanner.close();
+    numB = userInput.nextInt();
 
     // Calculate the result
     // Using nested if-else statements
@@ -229,7 +220,7 @@ class Control {
    * Calculator II
    * Using Switch Statement
    */
-  public void simpleCalculatorII() {
+  public void simpleCalculatorII(Scanner userInput) {
     // Initialize the numbers and the operator
     // @WARNING: Initialize the operator as a character
     // to avoid an error when reading the operator
@@ -240,33 +231,21 @@ class Control {
     // Show Instruction
     System.out.print("Enter the first number operator(+, -, *, /, %) the second number (e.g., 2 + 3) : ");
 
-    // Get the numbers and the operator from the user
-    // @WARNING: Close the scanner after the user input
-    // @WARNING: Use a character to read the operator from the user.
-    Scanner scanner = new Scanner(System.in);
-
     // Read the first number from the user
-    numA = scanner.nextInt();
+    numA = userInput.nextInt();
 
     // Read the operator from the user
-    operator = scanner.next().charAt(0);
+    operator = userInput.next().charAt(0);
 
     // Exit the program if the operator is not valid
-    // @WARNING: Close the scanner before exiting the program
     if (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '%') {
       System.out.println("Wrong Input");
-
-      // Close the scanner
-      // scanner.close();
 
       return;
     }
 
     // Read the second number from the user
-    numB = scanner.nextInt();
-
-    // Close the scanner
-    // scanner.close();
+    numB = userInput.nextInt();
 
     // Calculate the result
     // Using switch statement
@@ -297,20 +276,16 @@ class Control {
    * Zodiac Calculation
    * Using Switch Statement
    */
-  public void calculateZodiac() {
+  public void calculateZodiac(Scanner userInput) {
     // Initialize the year and the zodiac
     int year = 0;
     String zodiac = "";
 
     // Get the year from the user
-    Scanner scanner = new Scanner(System.in);
     System.out.print("연도를 입력하세요: ");
 
     // Read the year from the user
-    year = scanner.nextInt();
-
-    // Close the scanner
-    // scanner.close();
+    year = userInput.nextInt();
 
     // Calculate the zodiac
     // Using switch statement
@@ -385,7 +360,7 @@ class Control {
    * Addition Quiz
    * Using Loop Statement
    */
-  public void additionQuiz() {
+  public void additionQuiz(Scanner userInput) {
     // Initialize the counter
     byte counter = 1;
 
@@ -398,16 +373,12 @@ class Control {
     // when reading the answer from the user.
     int answer = numA + numB;
 
-    // Get the answer from the user
-    // @WARNING: Close the scanner after the user input
-    Scanner scanner = new Scanner(System.in);
-
     do {
       // Print the quiz
       System.out.print("What is " + numA + " + " + numB + "? ");
 
       // Read the answer from the user
-      int userAnswer = scanner.nextInt();
+      int userAnswer = userInput.nextInt();
 
       // Check if the answer is correct
       // if the answer is correct, break the loop
@@ -422,12 +393,7 @@ class Control {
       }
     } while (true);
 
-    // Close the scanner
-    // scanner.close();
-
     // Print the counter
-    // @COMMENT: Added the counter to print the number of attempts that is not the
-    // requirement of the practice.
     System.out.println(counter + "번만에 맞췄습니다.");
   }
 
@@ -436,7 +402,7 @@ class Control {
    * Up and Down Game
    * Using Loop Statement
    */
-  public void upAndDownGame() {
+  public void upAndDownGame(Scanner userInput) {
     // Generate a random number
     byte targetNumber = (byte) (Math.random() * 100);
 
@@ -446,16 +412,12 @@ class Control {
     // Print the prompt
     System.out.println("0부터 100사이의 숫자를 맞춰보세요.");
 
-    // Create a Scanner object to read input from the keyboard
-    // @WARNING: Close the scanner after the user input
-    Scanner scanner = new Scanner(System.in);
-
     do {
       // Display the prompt
       System.out.print("추측한 숫자를 입력하세요: ");
 
       // Read the number from the user
-      byte guessNumber = scanner.nextByte();
+      byte guessNumber = userInput.nextByte();
 
       // Determine if the guess number is correct or not
       if (guessNumber == targetNumber) {
@@ -470,9 +432,6 @@ class Control {
       counter++;
     } while (true);
 
-    // Close the scanner
-    // scanner.close();
-
     // Print the counter
     System.out.println("맞습니다. 숫자는 " + targetNumber + "입니다.");
     System.out.println(counter + "번만에 맞췄습니다.");
@@ -484,13 +443,9 @@ class Control {
    * 
    * @COMMENT: for statement와 while statement를 둘 다 이용할 수 있으나, while로 구현하겠다.
    */
-  public void subtractionQuiz() {
+  public void subtractionQuiz(Scanner userInput) {
     // Initialize the counter
     byte counter = 1, correct = 0;
-
-    // Initialize the scanner
-    // @WARNING: Close the scanner after the user input
-    Scanner scanner = new Scanner(System.in);
 
     // Repeat the quiz five times
     while (counter <= 5) {
@@ -515,7 +470,7 @@ class Control {
       System.out.print(numA + " - " + numB + " ? ");
 
       // Get the answer from the user
-      userAnswer = scanner.nextByte();
+      userAnswer = userInput.nextByte();
 
       // Check if the answer is correct
       if (userAnswer == answer) {
@@ -530,9 +485,6 @@ class Control {
       // Increment the counter
       counter++;
     }
-
-    // Close the scanner
-    // scanner.close();
 
     // Print the result
     System.out.println("\nGame Over!");
