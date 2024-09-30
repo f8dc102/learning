@@ -5,6 +5,7 @@ public class HWOne {
     // Create a Scanner object
     Scanner userInput = new Scanner(System.in);
 
+    System.out.println("getTax, scannerDemo, primeNumberTable, switchDemo, printGPA");
     // Ask for user input for method name
     System.out.print("Enter the name of the method you want to run: ");
     String methodName = userInput.nextLine();
