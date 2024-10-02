@@ -1,14 +1,29 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class StringArrayDebug {
   public static void main(String[] args) {
     // Get Scanner object
     Scanner userInput = new Scanner(System.in);
 
-    StringExample.checkEqual();
-    StringExample.comparingString();
-
+    // Test StringPractice class
     StringPractice.countUpperCase(userInput);
+    System.out.println();
+
+    // Test ArrayPractice class
+    ArrayPractice.createArray(userInput);
+    System.out.println();
+
+    ArrayPractice.findMaxValue();
+    System.out.println();
+
+    ArrayPractice.calAvg(userInput);
+    System.out.println();
+
+    ArrayPractice.swapElement();
+    System.out.println();
+
+    ArrayPractice.sortArrayElement();
   }
 }
 
@@ -92,5 +107,109 @@ class StringPractice {
     }
 
     System.out.println("대문자의 수는 " + count + "개 입니다.");
+  }
+}
+
+class ArrayPractice {
+  public ArrayPractice() {
+    System.out.println("ArrayPractice constructor");
+  }
+
+  public static void createArray(Scanner userInput) {
+    // Create an array of 5 double values
+    double[] arr = new double[5];
+
+    // Read values from the user
+    System.out.print("Enter 5 value: ");
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = userInput.nextDouble();
+    }
+
+    // Display the values
+    System.out.println("Entered values are: ");
+    for (int i = 0; i < arr.length; i++) {
+      System.out.println(arr[i]);
+    }
+  }
+
+  public static void findMaxValue() {
+    // Initialize an array of 5 integers
+    int[] arr = { 1, 2, 3, 4, 5 };
+
+    // max and index
+    int max = arr[0];
+    int index = 0;
+
+    // Find the largest
+    for (int i = 1; i < arr.length; i++) {
+      if (arr[i] > max) {
+        max = arr[i];
+        index = i;
+      }
+    }
+
+    // Display the result
+    System.out.println("Largest element is " + max + ", and the smallest index of 5 is " + index);
+  }
+
+  public static void calAvg(Scanner userInput) {
+    // How many numbers to average?
+    System.out.print("Enter the number of items: ");
+    int size = userInput.nextInt();
+
+    // Read the numbers
+    System.out.print("Enter the numbers: ");
+    double[] arr = new double[size];
+
+    for (int i = 0; i < arr.length; i++) {
+      arr[i] = userInput.nextDouble();
+    }
+
+    // Calculate the average
+    double avg = 0, aboveAvg = 0;
+    for (int i = 0; i < arr.length; i++) {
+      avg += arr[i];
+    }
+
+    avg /= arr.length;
+    System.out.println("Average: " + avg);
+
+    // Find the number of elements above the average
+    for (int i = 0; i < arr.length; i++) {
+      if (arr[i] > avg) {
+        aboveAvg++;
+      }
+    }
+
+    System.out.println("Number of elements above the average: " + aboveAvg);
+  }
+
+  public static void swapElement() {
+    // Declare an array that has two elements
+    int[] arr = { 1, 2 };
+
+    // Print the original array
+    System.out.println("Original array: " + Arrays.toString(arr));
+
+    // Swap the elements
+    int temp = arr[0];
+    arr[0] = arr[1];
+    arr[1] = temp;
+
+    // Print the swapped array
+    System.out.println("Swapped array: " + Arrays.toString(arr));
+  }
+
+  public static void sortArrayElement() {
+    double[] arr = { 1, 9, 4.5, 5.7, -4.5 };
+
+    // Print the original array
+    System.out.println("Original array: " + Arrays.toString(arr));
+
+    // Sort the Array
+    Arrays.sort(arr);
+
+    // Print the sorted array
+    System.out.println("Sorted array: " + Arrays.toString(arr));
   }
 }
