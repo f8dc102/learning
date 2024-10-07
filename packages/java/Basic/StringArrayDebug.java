@@ -1,29 +1,19 @@
 import java.util.Scanner;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Collections;
 
 public class StringArrayDebug {
   public static void main(String[] args) {
     // Get Scanner object
     Scanner userInput = new Scanner(System.in);
 
-    // Test StringPractice class
-    StringPractice.countUpperCase(userInput);
-    System.out.println();
+    ArrayExample arrayExample = new ArrayExample();
+    arrayExample.dynArray(userInput);
 
-    // Test ArrayPractice class
-    ArrayPractice.createArray(userInput);
-    System.out.println();
-
-    ArrayPractice.findMaxValue();
-    System.out.println();
-
-    ArrayPractice.calAvg(userInput);
-    System.out.println();
-
-    ArrayPractice.swapElement();
-    System.out.println();
-
-    ArrayPractice.sortArrayElement();
+    // Close Scanner object
+    userInput.close();
   }
 }
 
@@ -108,8 +98,98 @@ class StringPractice {
 
     System.out.println("대문자의 수는 " + count + "개 입니다.");
   }
+
+  public static void reverseStringPrint(Scanner userInput) {
+    // Read a string from the user
+    System.out.print("Enter a string: ");
+    String str = userInput.nextLine();
+
+    // Reverse the string and print it
+    for (int i = str.length() - 1; i >= 0; i--) {
+      System.out.print(str.charAt(i));
+    }
+
+    // Print a newline
+    System.out.println();
+  }
+
+  public static void howManyVowel(Scanner userInput) {
+    // Read a string from the user
+    System.out.print("Enter a string: ");
+    String str = userInput.nextLine();
+
+    // Count the number of vowels
+    int consonants = 0;
+    vowels = 0;
+  }
 }
 
+class ArrayExample {
+  public ArrayExample() {
+    System.out.println("ArrayExample constructor");
+
+    int[] anArray = { 1, 2, 3 };
+    callByReference(anArray);
+
+    System.out.println("After: " + Arrays.toString(anArray));
+
+    variableParameter(1, 2, 3, 4, 5);
+    variableParameter(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+  }
+
+  public static void dynArray(Scanner userInput) {
+    ArrayList<Integer> intArrayList = new ArrayList<Integer>();
+
+    // Add elements to the ArrayList
+    System.out.print("Enter 5 integers: ");
+
+    for (int i = 0; i < 5; i++) {
+      intArrayList.add(userInput.nextInt());
+    }
+  }
+
+  /**
+   * callByReference
+   * Test call by reference
+   * 
+   * @param intArray
+   * @return void
+   */
+  public static void callByReference(int[] intArray) {
+    System.out.println("Before: " + Arrays.toString(intArray));
+
+    // Do something with the array
+    for (int i = 0; i < intArray.length; i++) {
+      intArray[i] *= 2;
+    }
+  }
+
+  /**
+   * variableParameter
+   * Test variable parameter
+   *
+   * @param int... intValue
+   * @return void
+   */
+  public static void variableParameter(int... intValue) {
+    // Declare variables
+    int elementCount = intValue.length;
+    int sum = 0;
+
+    // Calculate the sum of the elements
+    for (int i : intValue) {
+      sum += i;
+    }
+
+    // Display the result
+    System.out.println("Number of elements: " + elementCount);
+    System.out.println("Sum of elements: " + sum);
+  }
+}
+
+/**
+ * ArrayPractice
+ */
 class ArrayPractice {
   public ArrayPractice() {
     System.out.println("ArrayPractice constructor");
@@ -211,5 +291,91 @@ class ArrayPractice {
 
     // Print the sorted array
     System.out.println("Sorted array: " + Arrays.toString(arr));
+  }
+
+  public static void secondDimensionArray(Scanner userInput) {
+    // Declare a 2D array
+    int[][] arr = new int[3][4];
+
+    // Get Eleemnts from the user
+    System.out.println("Enter 3 rows and 4 columns: ");
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 4; j++) {
+        arr[i][j] = userInput.nextInt();
+      }
+    }
+
+    // Display the sum of entire array
+    int sum = 0;
+
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 4; j++) {
+        sum += arr[i][j];
+      }
+    }
+
+    // Display the result
+    System.out.println("Sum of all elements: " + sum);
+  }
+
+  public static void secondDimensionArrayOperation(Scanner userInput) {
+    // Declare 2D arrays
+    int[][] arrA = new int[3][3];
+    int[][] arrB = new int[3][3];
+
+    // Get elements from the user
+    System.out.println("Enter 3x3 matrix A: ");
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        arrA[i][j] = userInput.nextInt();
+      }
+    }
+
+    System.out.println("Enter 3x3 matrix B: ");
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        arrB[i][j] = userInput.nextInt();
+      }
+    }
+
+    // Add two matrices
+    int[][] sum = new int[3][3];
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        sum[i][j] = arrA[i][j] + arrB[i][j];
+      }
+    }
+
+    // Print Complete Matrices
+    // Like : 1 2 3 1 2 3 2 4 6
+    // 4 5 6 + 4 5 6 = 8 10 12
+    // 7 8 9 7 8 9 14 16 18
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        System.out.print(arrA[i][j] + " ");
+      }
+
+      if (i == 1) {
+        System.out.print("+  ");
+      } else {
+        System.out.print("   ");
+      }
+
+      for (int j = 0; j < 3; j++) {
+        System.out.print(arrB[i][j] + " ");
+      }
+
+      if (i == 1) {
+        System.out.print("=  ");
+      } else {
+        System.out.print("   ");
+      }
+
+      for (int j = 0; j < 3; j++) {
+        System.out.print(sum[i][j] + " ");
+      }
+
+      System.out.println();
+    }
   }
 }
