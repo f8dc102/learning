@@ -4,7 +4,9 @@
  */
 public class OOP {
   public static void main(String[] args) {
-    System.out.println("Hello, World!");
+    System.out.println("carExample");
+
+    Practice practice = new Practice();
   }
 }
 
@@ -22,8 +24,59 @@ class Example {
  * Practice
  */
 class Practice {
+  /**
+   * Constructor
+   */
   public Practice() {
-    System.out.println("Practice constructor");
+    // Test Car Class
+    {
+      Car carExample = new Car();
+
+      System.out.printf("제작회사: %s\n모델명: %s\n색깔: %s\n최고 속도: %d\n현재 속도: %d\n", carExample.company,
+          carExample.color, carExample.model, carExample.maxSpeed, carExample.speed);
+
+      carExample.speed = 60;
+      System.out.printf("\n수정된 속도: %d\n", carExample.speed);
+    }
+
+    // Test Korean Class
+    {
+      Korean k1 = new Korean("연세", "011225-1234567");
+      Korean k2 = new Korean("믿음", "930525-0654321");
+
+      for (Korean k : new Korean[] { k1, k2 }) {
+        System.out.printf("\n%s.name: %s\n%s.id: %s\n", k, k.name, k, k.id);
+      }
+    }
+
+    // Test GetCircleArea Class
+    {
+      GetCircleArea getCircleArea = new GetCircleArea();
+      GetCircleArea.Circle circle = getCircleArea.new Circle(5);
+      System.out.printf("\n원의 반지름: %.2f\n원의 면적: %.2f\n원의 둘레: %.2f\n", circle.radius, circle.getArea(circle.radius),
+          circle.getCirumference(circle.radius));
+    }
+
+  }
+
+  class Car {
+    // Fields
+    String company = "현대자동차";
+    String model = "그랜저";
+    String color = "검정";
+    int maxSpeed = 250;
+    int speed;
+  }
+
+  class Korean {
+    String nation = "대한민국";
+    String name;
+    String id;
+
+    public Korean(String name, String id) {
+      this.name = name;
+      this.id = id;
+    }
   }
 
   class GetCircleArea {
@@ -73,130 +126,96 @@ class Practice {
       }
     }
 
-    class TestCircle {
-      public TestCircle() {
-        Circle circleA = new Circle();
-        Circle circleB = new Circle(25.0);
-        Circle circleC = new Circle(125.0);
+    class TV {
+      class TVClass {
+        // Fields
+        int channel;
+        int volumeLevel;
+        boolean on;
 
-        for (Circle circle : new Circle[] { circleA, circleB, circleC }) {
-          System.out.printf("%s: 원의 반지름이 %f일때, 넓이는 %f, 둘레는 %f입니다.", circle, radius, circle.radius, circle.getArea(),
-              circle.getCircumference());
+        // Constructors
+        public TVClass() {
+          this.channel = 1;
+          this.volumeLevel = 1;
+          this.on = false;
+
         }
 
-        circleA.setRadius(100.0);
-        System.out.println("circleA의 반지름을 100으로 수정한 후:");
+        // Methods
+        /**
+         * turnOn
+         *
+         * @return void
+         */
+        public void turnOn() {
+          this.on = true;
+        }
 
-        System.out.printf("circleA: 원의 반지름이 %f일때, 넓이는 %f, 둘레는 %f입니다.", circleA.radius, circleA.getArea(),
-            circleA.getCircumference());
+        /**
+         * turnOff
+         *
+         * @return void
+         */
+        public void turnOff() {
+          this.on = false;
+        }
+
+        /**
+         * setChannel
+         *
+         * @param channel the channel to set
+         * @return void
+         */
+        public void setChannel(int channel) {
+          this.channel = channel;
+        }
+
+        /**
+         * setVolume
+         *
+         * @param volume the volume to set
+         * @return void
+         */
+        public void setVolume(int volume) {
+          this.volumeLevel = volume;
+        }
+
+        /**
+         * channelUp
+         *
+         * @return void
+         */
+        public void channelUp() {
+          this.channel++;
+        }
+
+        /**
+         * channelDown
+         *
+         * @return void
+         */
+        public void channelDown() {
+          this.channel--;
+        }
+
+        /**
+         * volumeUp
+         *
+         * @return void
+         */
+        public void volumeUp() {
+          this.volumeLevel++;
+        }
+
+        /**
+         * volumeDown
+         *
+         * @return void
+         */
+        public void volumeDown() {
+          this.volumeLevel--;
+        }
       }
-    }
-  }
-
-  class TV {
-    class TVClass {
-      // Fields
-      int channel;
-      int volumeLevel;
-      boolean on;
-
-      // Constructors
-      public TVClass() {
-        this.channel = 1;
-        this.volumeLevel = 1;
-        this.on = false;
-
-      }
-
-      // Methods
-      /**
-       * turnOn
-       *
-       * @return void
-       */
-      public void turnOn() {
-        this.on = true;
-      }
-
-      /**
-       * turnOff
-       *
-       * @return void
-       */
-      public void turnOff() {
-        this.on = false;
-      }
-
-      /**
-       * setChannel
-       *
-       * @param channel the channel to set
-       * @return void
-       */
-      public void setChannel(int channel) {
-        this.channel = channel;
-      }
-
-      /**
-       * setVolume
-       *
-       * @param volume the volume to set
-       * @return void
-       */
-      public void setVolume(int volume) {
-        this.volumeLevel = volume;
-      }
-
-      /**
-       * channelUp
-       *
-       * @return void
-       */
-      public void channelUp() {
-        this.channel++;
-      }
-
-      /**
-       * channelDown
-       *
-       * @return void
-       */
-      public void channelDown() {
-        this.channel--;
-      }
-
-      /**
-       * volumeUp
-       *
-       * @return void
-       */
-      public void volumeUp() {
-        this.volumeLevel++;
-      }
-
-      /**
-       * volumeDown
-       *
-       * @return void
-       */
-      public void volumeDown() {
-        this.volumeLevel--;
-      }
-    }
-
-    class TestTVClass {
-      // TV1
-      TVClass tv1 = new TVClass();
-
-      tv1.turnOn();
-      tv1.setChannel(30);
-      tv1.setVolume(3);
-
-      System.out.printf("tv1's channel is %d, and volume level is %d", tv1.channel, tv1.volumeLevel);
-
-      // TV2
-      TVClass tv2 = new TVClass();
-
     }
   }
 }
