@@ -218,4 +218,66 @@ class Practice {
       }
     }
   }
+
+  class Calculator {
+    // Fields
+    int v1;
+    int v2;
+
+    // Constructors
+    public Calculator() {
+      this.v1 = 0;
+      this.v2 = 0;
+    }
+
+    public Calculator(int v1, int v2) {
+      this.v1 = v1;
+      this.v2 = v2;
+    }
+
+    // Methods
+    /**
+     * add
+     *
+     * @param v1 the first value
+     * @param v2 the second value
+     * @return the sum of the two values
+     */
+    public int add(int v1, int v2) {
+      return v1 + v2;
+    }
+
+    /**
+     * subtract
+     *
+     * @param v1 the first value
+     * @param v2 the second value
+     * @return the difference of the two values
+     */
+    public int subtract(int v1, int v2) {
+      return v1 - v2;
+    }
+
+    /**
+     * multiply
+     *
+     * @param v1 the first value
+     * @param v2 the second value
+     * @return the product of the two values
+     */
+    public int multiply(int v1, int v2) {
+      return v1 * v2;
+    }
+
+    /**
+     * divide
+     *
+     * @param v1 the first value
+     * @param v2 the second value
+     * @return the quotient of the two values
+     */
+    public int divide(int v1, int v2) {
+      return v1 / v2;
+    }
+  }
 }
