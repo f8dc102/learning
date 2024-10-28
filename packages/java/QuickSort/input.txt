@@ -1,1 +1,1 @@
-../../TestFiles/input.txt
+../../shared/input.txt
