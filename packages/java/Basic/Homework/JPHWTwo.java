@@ -222,6 +222,9 @@ class Three {
         case '/':
           result = cal.divide(v1, v2);
           break;
+        case '%':
+          result = cal.remainder(v1, v2);
+          break;
         default:
           System.out.println("Wrong Input");
           return;
