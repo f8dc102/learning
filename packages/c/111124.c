@@ -69,12 +69,16 @@ void exercise1() {
 // Exercise 2
 void exercise2() {
   // 변수 선언
-  char str[1000000];
-  int count = 0;
+  char str[1000001];
+  unsigned int count = 0;
 
-  // 문자열 입력
+  // 문자열 입력 프롬포트 출력
   printf("문자열 입력: ");
-  scanf("%[^\n]s", str);
+
+  // 문자열 입력 부분은 GPT의 도움을 받음
+  getchar();
+  fgets(str, sizeof(str), stdin);
+  str[strcspn(str, "\n")] = '\0';
 
   // strtok 함수를 이용하여 공백을 기준으로 단어 개수 세기
   char *token = strtok(str, " ");
@@ -84,7 +88,7 @@ void exercise2() {
   }
 
   // 단어 개수 출력
-  printf("단어의 개수: %d\n", count);
+  printf("단어의 개수: %u\n", count);
 }
 
 // Exercise 3
@@ -145,22 +149,19 @@ void exercise4() {
 
 // Exercise 5
 void exercise5() {
-  // 열거형 선언
-  enum Time { 아침, 점심, 저녁 };
-
   // 구조체 선언
   typedef struct {
-    enum Time time;
+    char time[7];
     char food[128];
     unsigned int calories;
   } Meal;
 
   // 샘플 데이터
   Meal meals[4] = {
-      {아침, "시리얼", 120},
-      {점심, "김밥", 300},
-      {점심, "닭가슴살 샐러드", 200},
-      {저녁, "피자", 800},
+      {"아침", "시리얼", 120},
+      {"점심", "김밥", 300},
+      {"점심", "닭가슴살 샐러드", 200},
+      {"저녁", "피자", 800},
   };
 
   unsigned int totalCalories = 0;
@@ -186,15 +187,10 @@ void exercise5() {
 
     // 시간대에 따른 칼로리 출력
     for (int i = 0; i < 4; i++) {
-      if (strcmp(tmpStr, "아침") == 0 && meals[i].time == 아침) {
-        printf("- %s: %d\n", meals[i].food, meals[i].calories);
+      if (strcmp(tmpStr, meals[i].time) == 0) {
+        printf("- %s: %d kcal\n", meals[i].food, meals[i].calories);
         totalCalories += meals[i].calories;
-      } else if (strcmp(tmpStr, "점심") == 0 && meals[i].time == 점심) {
-        printf("- %s: %d\n", meals[i].food, meals[i].calories);
-        totalCalories += meals[i].calories;
-      } else if (strcmp(tmpStr, "저녁") == 0 && meals[i].time == 저녁)
-        printf("- %s: %d\n", meals[i].food, meals[i].calories);
-      totalCalories += meals[i].calories;
+      }
     }
 
     printf("총 칼로리: %u kcal\n", totalCalories);
