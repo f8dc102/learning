@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Chapter6 {
+public class Inheritance {
   public static void main(String[] args) {
     Practice.P01 p01 = new Practice().new P01();
     System.out.print("\n");
