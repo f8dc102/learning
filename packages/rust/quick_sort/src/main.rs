@@ -2,7 +2,16 @@ use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
 
-// 퀵 정렬의 피벗을 기준으로 분할하는 함수
+/// Quick Sort Partition Function
+///
+/// # Parameters
+/// - `arr`: array to sort
+/// - `low`: start index
+/// - `high`: end index
+///
+/// # Returns
+/// - pivot index
+///
 fn partition(arr: &mut [i32], low: isize, high: isize) -> isize {
     let pivot = arr[high as usize];
     let mut i = low - 1;

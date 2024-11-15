@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class JPHWOne {
+public class HWOne {
   public static void main(String[] args) {
     // Create a Scanner object
     Scanner userInput = new Scanner(System.in);

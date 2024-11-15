@@ -1,2 +1,0 @@
-# Rule
-Use Xcode Only!

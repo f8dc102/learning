@@ -4,7 +4,7 @@ import java.util.Scanner;
  * JPHWTwo
  * Caller class for methods
  */
-public class JPHWTwo {
+public class HWTwo {
   public static void main(String[] args) {
     // Create a Scanner object
     Scanner userInput = new Scanner(System.in);
