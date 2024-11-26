@@ -1,1 +1,0 @@
-../../shared/input.txt
