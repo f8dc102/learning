@@ -1,0 +1,8 @@
+[package]
+name = "actix_basics"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = { version = "4.9", fearure = ["openssl"] }
+openssl = { version = "0.10" }
