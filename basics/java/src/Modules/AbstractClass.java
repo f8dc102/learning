@@ -1,6 +1,6 @@
 // import java.util.Scanner;
 
-public class Chapter7 {
+public class AbstractClass {
   public static void main(String[] args) {
     Circle circleA = new Circle(3);
     circleA.draw();

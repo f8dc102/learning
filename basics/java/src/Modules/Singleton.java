@@ -1,5 +1,3 @@
-package Modules.Epsilon;
-
 public class Singleton {
   public static void main(String[] args) {
     // 싱글톤 객체 얻기
@@ -19,6 +17,7 @@ class SingletonDemo {
 
   // 2. 생성자를 private으로 선언하여 외부에서 객체를 생성하지 못하게 함
   private SingletonDemo() {
+    System.out.println("🐈 개새");
   }
 
   // 3. 인스턴스를 반환하는 메서드 제공
