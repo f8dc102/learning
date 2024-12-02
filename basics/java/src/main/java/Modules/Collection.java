@@ -1,3 +1,5 @@
+package Modules;
+
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.List;
@@ -5,14 +7,6 @@ import java.util.Scanner;
 
 public class Collection {
   public Collection(Scanner userInput) {
-    Lists lists = new Lists(userInput);
-    Lists.ArrayLists arrayList = lists.new ArrayLists();
-    Lists.LinkedLists linkedList = lists.new LinkedLists();
-    Lists.Vectors vector = lists.new Vectors();
-
-    // Sample ArrayList
-    arrayList.ArrayListExample();
-
     System.out.println("Collection constructor");
   }
 }

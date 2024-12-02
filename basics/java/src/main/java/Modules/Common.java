@@ -1,3 +1,5 @@
+package Modules;
+
 import java.util.Scanner;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Scanner;
  * @version 1.0
  * @since 2024-09-14
  */
-public class Basics {
+public class Common {
   /**
    * Main Method
    * 

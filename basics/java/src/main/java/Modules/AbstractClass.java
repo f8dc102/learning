@@ -1,13 +1,7 @@
-// import java.util.Scanner;
+package Modules;
 
 public class AbstractClass {
   public static void main(String[] args) {
-    Circle circleA = new Circle(3);
-    circleA.draw();
-
-    System.out.println("원의 넓이는 %.1f\n", circleA.findArea());
-
-    Rectangle rectangleA = new Rectangle(3, 4);
   }
 }
 

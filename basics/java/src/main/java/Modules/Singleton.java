@@ -1,3 +1,5 @@
+package Modules;
+
 public class Singleton {
   public static void main(String[] args) {
     // 싱글톤 객체 얻기

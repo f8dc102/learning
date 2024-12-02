@@ -1,3 +1,5 @@
+package Modules;
+
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -120,7 +122,7 @@ class StringPractice {
 
     // Count the number of vowels
     int consonants = 0;
-    vowels = 0;
+    int vowels = 0;
   }
 }
 
