@@ -1,0 +1,96 @@
+# Remove Compiled Files
+*.o
+*.out
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.pdb
+*.ilk
+*.lo
+*.d
+*.class
+*.gcno
+*.gcda
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+Thumbs.db
+
+# Ignore Directories
+__pycache__/
+venv/
+env/
+node_modules/
+.vscode/
+.idea/
+.gradle/
+.swiftpm/
+out/
+build/
+target/
+debug/
+.cargo/
+.mvn/
+.xcodeproj/
+.xcworkspace/
+
+# Java specific
+*.iml
+*.class
+*.jar
+*.war
+*.ear
+mvnw
+target/
+.project
+.classpath
+.settings/
+
+# Rust specific
+Cargo.lock
+Cargo.toml.bak
+target/
+
+# C/C++ specific
+*.d
+*.gcno
+*.gcda
+
+# Windows specific
+*.exe.stackdump
+*.sln
+
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store

@@ -1,0 +1,3 @@
+# Rule
+
+Use VSCode Only!
